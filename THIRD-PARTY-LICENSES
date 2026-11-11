@@ -1,0 +1,21 @@
+Third-party software in this sample
+
+The programs in `server/` (the game server, the page server, and the bot) are built with the Go modules
+below. The game server uses the Amazon GameLift Servers server SDK and the modules it depends on, and uses
+github.com/gorilla/websocket and golang.org/x/net (netutil) directly; the bot uses gorilla/websocket. Each module keeps its own license; the full
+license text is in the module's repository and in the module cache after `go mod download`.
+
+| Module | Version | License | Source |
+|---|---|---|---|
+| github.com/amazon-gamelift/amazon-gamelift-servers-go-server-sdk/v5 | v5.6.0 | Apache-2.0 | https://github.com/amazon-gamelift/amazon-gamelift-servers-go-server-sdk |
+| github.com/DataDog/datadog-go/v5 | v5.6.0 | MIT | https://github.com/DataDog/datadog-go |
+| github.com/golang/mock | v1.6.0 | Apache-2.0 | https://github.com/golang/mock |
+| github.com/google/uuid | v1.5.0 | BSD-3-Clause | https://github.com/google/uuid |
+| github.com/gorilla/websocket | v1.5.1 | BSD-3-Clause | https://github.com/gorilla/websocket |
+| github.com/sethvargo/go-retry | v0.2.4 | Apache-2.0 | https://github.com/sethvargo/go-retry |
+| golang.org/x/net | v0.55.0 | BSD-3-Clause | https://github.com/golang/net |
+
+This list covers the modules compiled into the programs under `server/cmd/`. Update it when `server/go.mod` changes.
+
+The AWS Lambda function in `lambda/` uses the AWS SDK for JavaScript that the Lambda Node.js runtime provides;
+the sample doesn't bundle it.

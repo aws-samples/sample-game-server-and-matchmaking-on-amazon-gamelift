@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram id="diagram-1" name="Matchmaking flow">
+    <mxGraphModel page="0" pageWidth="1260" pageHeight="360" pageScale="1" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="Player presses Find match" vertex="1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=none;fontColor=#FFFFFF;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="30" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ticket" value="StartMatchmaking: the ticket enters the pool" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="220" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wait" value="Second player in 15 s?" vertex="1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="400" y="45" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="two" value="FlexMatch forms a two-player match" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="600" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="queue" value="The queue places the match on a ready process" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="790" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="session" value="Game session created" vertex="1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=none;fontColor=#FFFFFF;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="980" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="expand" value="Expansion lowers the team size from 2 to 1" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="410" y="240" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="one" value="FlexMatch forms a one-player match" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="600" y="240" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="" edge="1" parent="1" source="start" target="ticket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="" edge="1" parent="1" source="ticket" target="wait" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" value="Yes" edge="1" parent="1" source="wait" target="two" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.6" />
+        </mxCell>
+        <mxCell id="f4" value="" edge="1" parent="1" source="two" target="queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="" edge="1" parent="1" source="queue" target="session" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" value="No (15 s)" edge="1" parent="1" source="wait" target="expand" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.6" />
+        </mxCell>
+        <mxCell id="f7" value="" edge="1" parent="1" source="expand" target="one" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" value="" edge="1" parent="1" source="one" target="queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

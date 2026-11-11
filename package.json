@@ -1,0 +1,31 @@
+{
+  "name": "game-server-and-matchmaking-on-amazon-gamelift",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest && node --test test/*.test.mjs",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-gamelift": "3.1162.0",
+    "@swc/core": "1.16.13",
+    "@swc/jest": "0.2.39",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.19.1",
+    "aws-cdk": "2.1146.1",
+    "cdk-nag": "3.0.2",
+    "jest": "30.5.2",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.275.0",
+    "constructs": "10.8.1"
+  }
+}

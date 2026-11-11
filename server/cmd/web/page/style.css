@@ -1,0 +1,17 @@
+:root { color-scheme: dark; }
+body { margin: 0; background: #11161d; color: #e6edf3; font: 16px/1.4 system-ui, sans-serif; }
+main { max-width: 1000px; margin: 0 auto; padding: 16px; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+h1 { font-size: 24px; margin: 0 0 12px; }
+h2 { font-size: 18px; margin: 0 0 12px; }
+.panel { background: #1a222c; border-radius: 12px; padding: 20px; max-width: 420px; }
+form { display: grid; gap: 12px; }
+label { display: grid; gap: 4px; font-size: 14px; color: #c3d0dc; }
+input { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid #3a4756; background: #0f141a; color: inherit; }
+button { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 0; background: #2f81f7; color: #fff; cursor: pointer; }
+button.secondary { background: #2d3743; }
+button:disabled { opacity: 0.5; cursor: default; }
+.actions { display: flex; gap: 8px; margin-top: 12px; }
+canvas { display: block; width: 100%; height: auto; background: #0b3d4f; border-radius: 12px; touch-action: none; }
+#status { min-height: 1.4em; margin: 12px 0 0; font-weight: 600; }
+.muted { color: #9fb0c0; font-size: 14px; }
