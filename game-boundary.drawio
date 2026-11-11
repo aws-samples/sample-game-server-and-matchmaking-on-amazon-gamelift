@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram id="diagram-1" name="Game boundary">
+    <mxGraphModel page="0" pageWidth="1200" pageHeight="470" pageScale="1" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a" value="Keep: the Amazon GameLift Servers part (server/gamelift/)" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;fillColor=#F8F9FA;strokeColor=#232F3E;fontColor=#232F3E;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;labelBackgroundColor=none;">
+          <mxGeometry x="20" y="20" width="330" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="b" value="Change: where your game plugs in (yourgame.go)" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;fillColor=#FFF9F0;strokeColor=#ED7100;fontColor=#232F3E;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;labelBackgroundColor=none;">
+          <mxGeometry x="440" y="20" width="320" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="c" value="Replace: your game (server/game/)" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;fillColor=#F8F9FA;strokeColor=#5A6C86;fontColor=#232F3E;fontSize=13;fontStyle=1;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;labelBackgroundColor=none;">
+          <mxGeometry x="880" y="20" width="310" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="proc" value="process.go&#10;InitSDK, ProcessReady, and the service callbacks" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="50" y="70" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="life" value="lifecycle.go&#10;Hosts one game session: StartSession, endMatch, Terminate, Healthy" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="50" y="190" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sdk" value="sdk.go&#10;The server SDK calls" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="50" y="340" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="newgame" value="NewGame(setup)&#10;Builds your game from the Setup" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="470" y="70" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iface" value="Game interface&#10;Listen, Run, LastTick, Close" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="470" y="190" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pong" value="PongGame&#10;Wraps the demo game. Write your NewGame next to it" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="470" y="340" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proto" value="Network protocol&#10;WebSocket here; UDP for a console title" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="900" y="70" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rules" value="Rules and game loop" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="900" y="190" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="seats" value="Seats and leaving&#10;Calls Validate for each player who joins" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="900" y="300" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" value="" edge="1" parent="1" source="proc" target="life" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;strokeColor=#232F3E;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry x="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x2" value="A. Setup" edge="1" parent="1" source="life" target="newgame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;strokeColor=#232F3E;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry x="0.2" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x3" value="B. Listen, Run" edge="1" parent="1" source="life" target="iface" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;strokeColor=#232F3E;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry x="0.2" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4" value="" edge="1" parent="1" source="life" target="sdk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;strokeColor=#232F3E;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry x="0" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x5" value="C. Your game implements it" edge="1" parent="1" source="iface" target="rules" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;strokeColor=#232F3E;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry x="0" relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

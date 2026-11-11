@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Pong</h1>
+      <p id="who" class="muted"></p>
+    </header>
+
+    <section id="signin" class="panel" hidden>
+      <h2>Sign in</h2>
+      <form id="signin-form" autocomplete="on">
+        <label>Player name <input id="username" name="username" autocomplete="username" required maxlength="64"></label>
+        <label>Password <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256"></label>
+        <button type="submit">Sign in</button>
+      </form>
+      <p class="muted">Ask the operator for a player name and password.</p>
+    </section>
+
+    <section id="lobby" class="panel" hidden>
+      <h2>Find a match</h2>
+      <p id="lobby-text">Press Find match to play another player.</p>
+      <div class="actions">
+        <button id="find" type="button">Find match</button>
+        <button id="cancel" type="button" class="secondary" hidden>Cancel</button>
+        <button id="signout" type="button" class="secondary">Sign out</button>
+      </div>
+    </section>
+
+    <section id="game" hidden>
+      <canvas id="table" width="800" height="500" role="img" aria-label="Pong field"></canvas>
+      <div class="actions">
+        <button id="again" type="button" hidden>Play again</button>
+      </div>
+      <p class="muted">Move your paddle with the up and down arrow keys, or W and S.</p>
+    </section>
+
+    <p id="status" role="status"></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

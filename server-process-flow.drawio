@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram id="diagram-1" name="Server process flow">
+    <mxGraphModel page="0" pageWidth="1260" pageHeight="500" pageScale="1" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_start" value="Process starts" vertex="1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=none;fontColor=#FFFFFF;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="30" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p_init" value="Step 1: InitSDK, then ProcessReady" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="215" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p_osg" value="Step 6: OnStartGameSession arrives" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="400" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p_act" value="Open the port, then ActivateGameSession" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="585" y="60" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p_dec" value="Only one player?" vertex="1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="760" y="45" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p_wait" value="Step 7: check each player with AcceptPlayerSession; wait for the second player" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="945" y="45" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p_ai" value="Step 7: check the player with AcceptPlayerSession; seat the computer" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="760" y="225" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p_play" value="Play the match" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="955" y="240" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p_rm" value="RemovePlayerSession for each player, then ProcessEnding" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#232F3E;fontColor=#232F3E;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="1130" y="230" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p_end" value="Process exits; a new one starts" vertex="1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;strokeColor=none;fontColor=#FFFFFF;fontSize=12;labelBackgroundColor=none;">
+          <mxGeometry x="1130" y="390" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" value="" edge="1" parent="1" source="p_start" target="p_init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" value="" edge="1" parent="1" source="p_init" target="p_osg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" value="" edge="1" parent="1" source="p_osg" target="p_act" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" value="" edge="1" parent="1" source="p_act" target="p_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g5" value="No" edge="1" parent="1" source="p_dec" target="p_wait" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.6" />
+        </mxCell>
+        <mxCell id="g6" value="Yes" edge="1" parent="1" source="p_dec" target="p_ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" x="-0.6" />
+        </mxCell>
+        <mxCell id="g7" value="" edge="1" parent="1" source="p_ai" target="p_play" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g8" value="" edge="1" parent="1" source="p_wait" target="p_play" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g9" value="" edge="1" parent="1" source="p_play" target="p_rm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g10" value="" edge="1" parent="1" source="p_rm" target="p_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g11" value="" edge="1" parent="1" source="p_end" target="p_init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
