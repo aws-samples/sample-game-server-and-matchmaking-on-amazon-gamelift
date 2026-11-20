@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/amazon-gamelift/amazon-gamelift-servers-go-server-sdk/v5 v5.6.0
-	github.com/gorilla/websocket v1.5.1
+	github.com/gorilla/websocket v1.5.3
 )
 
 require (
